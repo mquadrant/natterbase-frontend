@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="40" height="40">
+<path d="M0 2C0 0.895431 0.895431 0 2 0H38C39.1046 0 40 0.895431 40 2V38C40 39.1046 39.1046 40 38 40H2C0.895431 40 0 39.1046 0 38V2Z" fill="#C4C4C4"/>
+</mask>
+<g mask="url(#mask0)">
+<mask id="mask1" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="40" height="40">
+<rect width="40" height="40" fill="url(#paint0_linear)"/>
+</mask>
+<g mask="url(#mask1)">
+<rect width="40" height="40" fill="#00CBA6"/>
+<g style="mix-blend-mode:multiply" opacity="0.15">
+<rect x="47.9364" y="80.2047" width="73.6497" height="34.6234" transform="rotate(-109.677 47.9364 80.2047)" fill="#00CB3C"/>
+</g>
+<g style="mix-blend-mode:multiply" opacity="0.05">
+<rect x="-4.01187" y="54.5804" width="83.5612" height="39.2828" transform="rotate(-66.9 -4.01187 54.5804)" fill="#46310F"/>
+</g>
+<g style="mix-blend-mode:multiply" opacity="0.15">
+<rect x="0.235809" y="-26.802" width="73.6497" height="40.6666" transform="rotate(44.8998 0.235809 -26.802)" fill="#06010C"/>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear" x1="40" y1="40" x2="40" y2="0" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFC9B3"/>
+<stop offset="1" stop-color="#FFD2C2"/>
+</linearGradient>
+</defs>
+</svg>
