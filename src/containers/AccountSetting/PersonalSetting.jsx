@@ -6,7 +6,7 @@ import { Card, Image, Col, Form, Button } from "react-bootstrap";
 
 export default function PersonalSetting() {
   return (
-    <Card>
+    <Card className="setting-card">
       <Card.Body>
         <div>
           <img alt="bullet" src={Bullet} />
