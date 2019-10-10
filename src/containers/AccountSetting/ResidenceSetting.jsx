@@ -4,7 +4,7 @@ import { Card, Col, Form, Button } from "react-bootstrap";
 
 export default function ResidenceSetting() {
   return (
-    <Card>
+    <Card className="setting-card">
       <Card.Body>
         <div>
           <img alt="bullet" src={Bullet} />
