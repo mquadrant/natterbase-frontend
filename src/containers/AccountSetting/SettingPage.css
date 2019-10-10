@@ -45,6 +45,9 @@ form input {
   border-color: #f58634;
   background: #f58634;
 }
+.setting-card {
+  box-shadow: 1px 0px 12px rgba(0, 0, 0, 0.1);
+}
 
 @media (min-width: 991px) {
   .settings-form {
