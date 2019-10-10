@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* Navigation Bar */
+.nav-bar {
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+  font-family: Avenir Next;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  color: #737373;
+  background-color: #fff;
+  box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.1);
+}
+.nav-bar a:active,
+.nav-bar a:focus {
+  color: #212529;
+  font-weight: 500 !important;
+}
+.dropdown.nav-item > a {
+  font-weight: 600;
+  color: #212529 !important;
+}
+@media (min-width: 991px) {
+  .nav-bar {
+    padding: 15px 7% !important;
+  }
+  .navbar-nav a {
+    margin-right: 20px;
+  }
+  .navbar-brand {
+    margin-right: 40px !important;
+  }
+}
