@@ -11,7 +11,7 @@ export default function SettingPage() {
     <div className="setting">
       <Container>
         <Spacer size="30" />
-        <PageTitle>Account Settings</PageTitle>
+        <PageTitle>ACCOUNT SETTINGS</PageTitle>
         <Spacer size="30" />
         <section>
           <PersonalSetting />
