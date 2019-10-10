@@ -6,7 +6,9 @@ import Header from "./../components/Header";
 const DashboardPage = lazy(() =>
   import("../containers/Dashboard/DashboardPage")
 );
-const SettingPage = lazy(() => import("../containers/Settings/SettingPage"));
+const SettingPage = lazy(() =>
+  import("../containers/AccountSetting/SettingPage")
+);
 
 export default function AppRoutes() {
   return (
@@ -15,7 +17,7 @@ export default function AppRoutes() {
       <Suspense fallback={<div>Loading...</div>}>
         <Switch>
           <Route path="/app/dashboard" component={DashboardPage} />
-          <Route path="/app/settings" component={SettingPage} />
+          <Route path="/app/account_setting" component={SettingPage} />
         </Switch>
       </Suspense>
     </React.Fragment>
