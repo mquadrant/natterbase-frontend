@@ -7,15 +7,15 @@ export default function Header() {
   return (
     <div>
       <Navbar expand="lg" className="nav-bar">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <img alt="site logo" src={Logo} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#home">Dashboard</Nav.Link>
-            <Nav.Link href="#buy_insurance">Buy insurance</Nav.Link>
-            <Nav.Link href="#account_setting">Account settings</Nav.Link>
+            <Nav.Link href="/app/dashboard">Dashboard</Nav.Link>
+            <Nav.Link href="#">Buy insurance</Nav.Link>
+            <Nav.Link href="/app/account_setting">Account settings</Nav.Link>
           </Nav>
           <img alt="profile avatar" src={Avatar} />
           <Nav>
