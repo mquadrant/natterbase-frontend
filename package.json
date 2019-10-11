@@ -20,6 +20,8 @@
     "styled-components": "^4.4.0"
   },
   "scripts": {
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "start": "node server.js",
     "dev:start": "react-scripts start",
     "build": "react-scripts build",

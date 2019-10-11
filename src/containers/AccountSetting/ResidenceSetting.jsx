@@ -36,7 +36,7 @@ export default function ResidenceSetting() {
               as={Col}
               md="4"
               className="pr-3"
-              controlId="formGridEmail"
+              controlId="formGridCurState"
             >
               <Form.Label>CURRENT STATE</Form.Label>
               <Form.Control
@@ -52,7 +52,7 @@ export default function ResidenceSetting() {
               as={Col}
               md="4"
               className="pr-3"
-              controlId="formGridFname"
+              controlId="formGridStateRes"
             >
               <Form.Label>NEW STATE OF RESIDENCE</Form.Label>
               <Form.Control
@@ -66,7 +66,7 @@ export default function ResidenceSetting() {
               as={Col}
               md="4"
               className="pr-3"
-              controlId="formGridUname"
+              controlId="formGridLga"
             >
               <Form.Label>WHAT LGA DO YOU LIVE IN</Form.Label>
               <Form.Control
@@ -80,7 +80,7 @@ export default function ResidenceSetting() {
               as={Col}
               md="4"
               className="pr-3"
-              controlId="formGridDbirth"
+              controlId="formGridFedCon"
             >
               <Form.Label>FEDERAL CONSTITUENCIES</Form.Label>
               <Form.Control
@@ -96,7 +96,7 @@ export default function ResidenceSetting() {
               as={Col}
               md="4"
               className="pr-3"
-              controlId="formGridFname"
+              controlId="formGridSenDist"
             >
               <Form.Label>SENETORIAL DISTRICT</Form.Label>
               <Form.Control
@@ -110,7 +110,7 @@ export default function ResidenceSetting() {
               as={Col}
               md="4"
               className="pr-3"
-              controlId="formGridUname"
+              controlId="formGridStateCon"
             >
               <Form.Label>STATE CONSTITUENCIES</Form.Label>
               <Form.Control
