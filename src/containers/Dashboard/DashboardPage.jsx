@@ -13,6 +13,7 @@ import Card1 from "./../../images/card1.svg";
 import Card2 from "./../../images/card2.svg";
 import Card3 from "./../../images/card3.svg";
 import Card4 from "./../../images/card4.svg";
+import HorizontalLine from "../../components/HorizontalLine";
 
 export default function DashboardPage() {
   return (
@@ -49,7 +50,11 @@ export default function DashboardPage() {
           />
         </section>
         <Spacer size="40" />
-        <section>
+        <section class="application-table card">
+          <div className="table-header">
+            <span className="table-title">Insurance Applications</span>
+            <HorizontalLine />
+          </div>
           <ApplicationTable />
         </section>
         <Spacer size="60" />
