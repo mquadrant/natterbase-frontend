@@ -1,6 +1,10 @@
 import React from "react";
 import { Dropdown } from "react-bootstrap";
 
+const ForwardCustomToggle = React.forwardRef((props, ref) => (
+  <CustomToggle {...props} innerRef={ref} />
+));
+
 function CustomToggle(props) {
   function handleClick(e) {
     e.preventDefault();
@@ -24,7 +28,7 @@ function CustomToggle(props) {
 export default function DropDown(props) {
   return (
     <Dropdown>
-      <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
+      <Dropdown.Toggle as={ForwardCustomToggle} id="dropdown-custom-components">
         {props.title}
       </Dropdown.Toggle>
       <Dropdown.Menu>

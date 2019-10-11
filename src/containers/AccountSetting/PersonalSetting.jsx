@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import HorizontalLine from "./../../components/HorizontalLine";
 import Bullet from "./../../images/bullet.svg";
 import ProfileImage from "./../../images/kal-loftus-596319-unsplash.jpeg";
 import { Card, Image, Col, Form, Button } from "react-bootstrap";
 
 export default function PersonalSetting() {
+  const [values, setValues] = useState({
+    email: "amarachuku@gmail.com",
+    fullName: "Olatunji Joseph",
+    userName: "Madjozi",
+    birthDate: "07 / 15 / 1990",
+    currentPassword: "1234445s",
+    newPassword: "",
+    confirmPassword: ""
+  });
+
+  const handleChange = e => {
+    const { value, name } = e.target;
+    setValues({ ...values, [name]: value });
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+  };
+
   return (
     <Card className="setting-card">
       <Card.Body>
@@ -57,7 +76,8 @@ export default function PersonalSetting() {
               <Form.Control
                 disabled
                 type="email"
-                value="amarachuku@gmail.com"
+                value={values.email}
+                onChange={handleChange}
               />
             </Form.Group>
           </Form.Row>
@@ -69,7 +89,12 @@ export default function PersonalSetting() {
               controlId="formGridFname"
             >
               <Form.Label>FULL NAME</Form.Label>
-              <Form.Control type="text" value="Olatunji Joseph" />
+              <Form.Control
+                type="text"
+                name="fullName"
+                value={values.fullName}
+                onChange={handleChange}
+              />
             </Form.Group>
             <Form.Group
               as={Col}
@@ -78,7 +103,12 @@ export default function PersonalSetting() {
               controlId="formGridUname"
             >
               <Form.Label>USER NAME</Form.Label>
-              <Form.Control type="text" value="Madjozi" />
+              <Form.Control
+                type="text"
+                name="userName"
+                value={values.userName}
+                onChange={handleChange}
+              />
             </Form.Group>
             <Form.Group
               as={Col}
@@ -87,10 +117,15 @@ export default function PersonalSetting() {
               controlId="formGridDbirth"
             >
               <Form.Label>BIRTH DATE</Form.Label>
-              <Form.Control disabled type="text" value="07 / 15 / 1990" />
+              <Form.Control
+                disabled
+                type="text"
+                value={values.birthDate}
+                onChange={handleChange}
+              />
             </Form.Group>
           </Form.Row>
-          <Button className="my-2" type="submit">
+          <Button className="my-2" type="submit" onClick={handleSubmit}>
             Save Changes
           </Button>
         </Form>
@@ -104,7 +139,12 @@ export default function PersonalSetting() {
               controlId="formGridCurpassword"
             >
               <Form.Label>CURRENT PASSWORD</Form.Label>
-              <Form.Control type="password" value="1234445s" />
+              <Form.Control
+                type="password"
+                name="currentPassword"
+                value={values.currentPassword}
+                onChange={handleChange}
+              />
             </Form.Group>
             <Form.Group
               as={Col}
@@ -113,7 +153,12 @@ export default function PersonalSetting() {
               controlId="formGridNewpassword"
             >
               <Form.Label>NEW PASSWORD</Form.Label>
-              <Form.Control type="password" value="" />
+              <Form.Control
+                type="password"
+                name="newPassword"
+                value={values.newPassword}
+                onChange={handleChange}
+              />
             </Form.Group>
             <Form.Group
               as={Col}
@@ -122,10 +167,15 @@ export default function PersonalSetting() {
               controlId="formGridConPassword"
             >
               <Form.Label>CONFIRM PASSWORD</Form.Label>
-              <Form.Control type="password" value="" />
+              <Form.Control
+                type="password"
+                name="confirmPassword"
+                value={values.confirmPassword}
+                onChange={handleChange}
+              />
             </Form.Group>
           </Form.Row>
-          <Button className="mt-2" type="submit">
+          <Button className="mt-2" type="submit" onClick={handleSubmit}>
             Save Changes
           </Button>
         </Form>
