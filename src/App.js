@@ -7,7 +7,7 @@ const AppRoutes = lazy(() => import("./routes/appRoutes"));
 const App = () => {
   return (
     <React.Fragment>
-      <Router basename={window.location.pathname || ""}>
+      <Router>
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
             <Route exact path="/" component={HomePage} />
