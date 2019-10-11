@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PageTitle from "./../../components/PageTitle";
 import Spacer from "./../../components/Spacer";
+import { connect } from "react-redux";
 import "./Dashboard.css";
 import { format } from "date-fns";
 import StatisticCard from "./StatisticCard";
 import ApplicationTable from "./ApplicationTable";
+import HorizontalLine from "../../components/HorizontalLine";
+import { getApplications, getStatistics } from "./redux/actions";
 import BGCard1 from "./../../images/cardbackground1.svg";
 import BGCard2 from "./../../images/cardbackground2.svg";
 import BGCard3 from "./../../images/cardbackground3.svg";
@@ -13,9 +16,15 @@ import Card1 from "./../../images/card1.svg";
 import Card2 from "./../../images/card2.svg";
 import Card3 from "./../../images/card3.svg";
 import Card4 from "./../../images/card4.svg";
-import HorizontalLine from "../../components/HorizontalLine";
 
-export default function DashboardPage() {
+function DashboardPage(props) {
+  const { getStatisticsHandler, getApplicationsHandler } = props;
+
+  useEffect(() => {
+    getStatisticsHandler();
+    getApplicationsHandler();
+  }, [getStatisticsHandler, getApplicationsHandler]);
+
   return (
     <div className="dashboard">
       <div className="dashboard-body">
@@ -50,7 +59,7 @@ export default function DashboardPage() {
           />
         </section>
         <Spacer size="40" />
-        <section class="application-table card">
+        <section className="application-table card">
           <div className="table-header">
             <span className="table-title">Insurance Applications</span>
             <HorizontalLine />
@@ -62,3 +71,22 @@ export default function DashboardPage() {
     </div>
   );
 }
+
+// const mapStateToProps = (state) => {
+//   return {
+//       error: state.journals.error,
+//       pending: state.journals.pending,
+//   };
+// };
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getStatisticsHandler: () => dispatch(getStatistics()),
+    getApplicationsHandler: () => dispatch(getApplications())
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(DashboardPage);
