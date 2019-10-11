@@ -43,7 +43,7 @@ export function getStatisticsError(error) {
   return { type: types.GET_STATISTICS_PENDING, error };
 }
 
-export const getApplications = () => {
+export const getStatistics = () => {
   return dispatch => {
     dispatch(getStatisticsPending());
     return axios
