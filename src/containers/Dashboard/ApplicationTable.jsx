@@ -1,5 +1,4 @@
 import React from "react";
-import { Nav, NavDropdown } from "react-bootstrap";
 import DropDown from "../../components/DropDown";
 
 const completed = {
@@ -12,8 +11,8 @@ const incomplete = {
 };
 export default function ApplicationTable() {
   return (
-    <div class="table-responsive-md">
-      <table responsive class="table table-striped table-borderless">
+    <div className="table-responsive-md">
+      <table className="table table-striped table-borderless">
         <colgroup>
           <col width="7%" />
           <col width="23%" />
@@ -43,12 +42,15 @@ export default function ApplicationTable() {
             <td>#21,400.00</td>
             <td>14 Oct 2019</td>
             <td>
-              <span class="btn-completed" style={1 ? completed : incomplete}>
+              <span
+                className="btn-completed"
+                style={1 ? completed : incomplete}
+              >
                 <li>Completed</li>
               </span>
             </td>
             <td>
-              <span class="btn-claim">Make a Claim</span>
+              <span className="btn-claim">Make a Claim</span>
             </td>
             <td>
               <DropDown title="More Actions" />
@@ -60,12 +62,15 @@ export default function ApplicationTable() {
             <td>#21,400.00</td>
             <td>14 Oct 2019</td>
             <td>
-              <span class="btn-completed" style={0 ? completed : incomplete}>
+              <span
+                className="btn-completed"
+                style={0 ? completed : incomplete}
+              >
                 <li>Completed</li>
               </span>
             </td>
             <td>
-              <span class="btn-claim">Make a Claim</span>
+              <span className="btn-claim">Make a Claim</span>
             </td>
             <td>
               <DropDown title="More Actions" />
