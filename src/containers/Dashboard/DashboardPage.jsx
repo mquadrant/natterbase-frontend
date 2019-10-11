@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PageTitle from "./../../components/PageTitle";
 import Spacer from "./../../components/Spacer";
 import { connect } from "react-redux";
@@ -20,10 +20,8 @@ import Card4 from "./../../images/card4.svg";
 function DashboardPage(props) {
   const { getStatisticsHandler, getApplicationsHandler } = props;
 
-  useEffect(() => {
-    getStatisticsHandler();
-    getApplicationsHandler();
-  }, [getStatisticsHandler, getApplicationsHandler]);
+  getStatisticsHandler();
+  getApplicationsHandler();
 
   return (
     <div className="dashboard">
