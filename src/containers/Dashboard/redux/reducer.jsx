@@ -1,18 +1,21 @@
 import {
   GET_ALL_APPLICATION,
   GET_ALL_APPLICATION_PENDING,
-  GET_ALL_APPLICATION_ERROR
+  GET_ALL_APPLICATION_ERROR,
+  GET_STATISTICS,
+  GET_STATISTICS_PENDING,
+  GET_STATISTICS_ERROR
 } from "./types";
 
 // set initial state
-const initialState = {
+const applicationState = {
   applications: [],
   applicationPending: false,
   applicationError: null
 };
 
-//reducer
-export default (state = initialState, action = {}) => {
+//Reducer for applications
+export function applicationReducer(state = applicationState, action = {}) {
   switch (action.type) {
     case GET_ALL_APPLICATION_PENDING:
       return {
@@ -34,4 +37,36 @@ export default (state = initialState, action = {}) => {
     default:
       return state;
   }
+}
+
+// set initial state
+const statisticState = {
+  statistics: [],
+  statisticsPending: false,
+  statisticsError: null
 };
+
+//Reducer for statistics
+export function statisticReducer(state = statisticState, action = {}) {
+  switch (action.type) {
+    case GET_STATISTICS_PENDING:
+      return {
+        ...state,
+        statisticsPending: true
+      };
+    case GET_STATISTICS_ERROR:
+      return {
+        ...state,
+        statisticsError: action.error,
+        statisticsPending: false
+      };
+    case GET_STATISTICS:
+      return {
+        ...state,
+        statistics: action.payload,
+        statisticsPending: false
+      };
+    default:
+      return state;
+  }
+}
