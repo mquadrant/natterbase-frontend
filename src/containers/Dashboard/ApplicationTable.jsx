@@ -1,5 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
 import DropDown from "../../components/DropDown";
+import { Loader, ErrorAlert } from "./../../components/UtilComponent";
+import { currencyConverter } from "./../../helpers/currencyConverter";
+import { format } from "date-fns";
 
 const completed = {
   color: "#6ADD0E",
@@ -9,7 +13,9 @@ const incomplete = {
   color: "#FD5262",
   background: "rgba(253, 82, 98, 0.2)"
 };
-export default function ApplicationTable() {
+
+function ApplicationTable(props) {
+  const { applications, applicationError, applicationPending } = props;
   return (
     <div className="table-responsive-md">
       <table className="table table-striped table-borderless">
@@ -36,48 +42,56 @@ export default function ApplicationTable() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td className="spacer">1</td>
-            <td>Travel Insurance</td>
-            <td>#21,400.00</td>
-            <td>14 Oct 2019</td>
-            <td>
-              <span
-                className="btn-completed"
-                style={1 ? completed : incomplete}
-              >
-                <li>Completed</li>
-              </span>
-            </td>
-            <td>
-              <span className="btn-claim">Make a Claim</span>
-            </td>
-            <td>
-              <DropDown title="More Actions" />
-            </td>
-          </tr>
-          <tr>
-            <td className="spacer">2</td>
-            <td>Travel Insurance</td>
-            <td>#21,400.00</td>
-            <td>14 Oct 2019</td>
-            <td>
-              <span
-                className="btn-completed"
-                style={0 ? completed : incomplete}
-              >
-                <li>Completed</li>
-              </span>
-            </td>
-            <td>
-              <span className="btn-claim">Make a Claim</span>
-            </td>
-            <td>
-              <DropDown title="More Actions" />
-            </td>
-          </tr>
+          {applicationPending ? (
+            <tr>
+              <td colSpan="7" style={{ textAlign: "center", width: "100%" }}>
+                <Loader />
+              </td>
+            </tr>
+          ) : applicationError ? (
+            <tr>
+              <td colSpan="7" style={{ textAlign: "center", width: "100%" }}>
+                <ErrorAlert />
+              </td>
+            </tr>
+          ) : (
+            applications.map((application, index) => (
+              <tr key={application._id}>
+                <td className="spacer">{index + 1}</td>
+                <td>{application.insuranceType}</td>
+                <td>{`₦${currencyConverter(application.amount)}`}</td>
+                <td>
+                  {format(new Date(application.createdDate), "MMMM do yyyy")}
+                </td>
+                <td>
+                  <span
+                    className="btn-completed"
+                    style={application.complete ? completed : incomplete}
+                  >
+                    <li>{application.complete ? "Completed" : "Incomplete"}</li>
+                  </span>
+                </td>
+                <td>
+                  <span className="btn-claim">Make a Claim</span>
+                </td>
+                <td>
+                  <DropDown title="More Actions" />
+                </td>
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
     </div>
   );
 }
+
+const mapStateToProps = state => {
+  return {
+    applications: state.applications.applications,
+    applicationError: state.applications.applicationError,
+    applicationPending: state.applications.applicationPending
+  };
+};
+
+export default connect(mapStateToProps)(ApplicationTable);
