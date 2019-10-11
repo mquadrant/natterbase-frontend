@@ -20,12 +20,10 @@ export default function Header() {
           <img alt="profile avatar" src={Avatar} />
           <Nav>
             <NavDropdown title="Luis Durello" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Account</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Log out</NavDropdown.Item>
+              <NavDropdown.Item href="#">Account</NavDropdown.Item>
+              <NavDropdown.Item href="#">Log out</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Invite link
-              </NavDropdown.Item>
+              <NavDropdown.Item href="#">Invite link</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
